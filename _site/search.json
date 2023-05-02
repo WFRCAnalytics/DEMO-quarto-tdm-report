@@ -53,7 +53,7 @@
     "href": "0_InputProcessing/demo.html",
     "title": "Demographic Summary",
     "section": "",
-    "text": "Code\nfrom dbfread import DBF\nimport pandas as pd\nse_file = pd.DataFrame(DBF('../../../0_InputProcessing/SE_File_' + clean(RID) + '.dbf',load=True))\nctot_file = ''\n#display(se_file.head(5))"
+    "text": "Code\nimport sys\nsys.path.append('..')\nimport globalpaths\nse_file = globalpaths.df_se_file\nctot_file = ''\ndisplay(se_file.head(5))\n\n\n\n\n\n\n\n\n\nZ\nCO_TAZID\nSUBAREAID\nTOTHH\nHHPOP\nHHSIZE\nTOTEMP\nRETEMP\nINDEMP\nOTHEMP\n...\nENROL_HIGH\nCO_FIPS\nCO_NAME\nCITY_NAME\nDISTLRG\nDLRG_NAME\nDISTMED\nDMED_NAME\nDISTSML\nDSML_NAME\n\n\n\n\n0\n1\n30001\n1\n0.0\n0.0\n0.00\n0.0\n0.0\n0.0\n0.0\n...\n0\n3\nBOX ELDER\nBox Elder County North\n1\nBox Elder - WFRC\n1\nNorth of Brigham City\n1\n1.1: Brigham City North\n\n\n1\n2\n30002\n1\n11.6\n64.0\n5.52\n0.0\n0.0\n0.0\n0.0\n...\n0\n3\nBOX ELDER\nBox Elder County North\n1\nBox Elder - WFRC\n1\nNorth of Brigham City\n1\n1.1: Brigham City North\n\n\n2\n3\n30003\n1\n12.5\n53.2\n4.26\n0.0\n0.0\n0.0\n0.0\n...\n0\n3\nBOX ELDER\nBox Elder County North\n1\nBox Elder - WFRC\n1\nNorth of Brigham City\n1\n1.1: Brigham City North\n\n\n3\n4\n30004\n1\n2.9\n9.8\n3.38\n0.0\n0.0\n0.0\n0.0\n...\n0\n3\nBOX ELDER\nBox Elder County North\n1\nBox Elder - WFRC\n1\nNorth of Brigham City\n1\n1.1: Brigham City North\n\n\n4\n5\n30005\n1\n50.1\n153.6\n3.07\n2.3\n0.0\n0.0\n2.3\n...\n0\n3\nBOX ELDER\nBox Elder County North\n1\nBox Elder - WFRC\n1\nNorth of Brigham City\n1\n1.1: Brigham City North\n\n\n\n\n5 rows × 36 columns"
   },
   {
     "objectID": "0_InputProcessing/index.html",
@@ -61,5 +61,61 @@
     "title": "Input Processing",
     "section": "",
     "text": "Preface"
+  },
+  {
+    "objectID": "index.html#general-identification",
+    "href": "index.html#general-identification",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "General Identification",
+    "text": "General Identification\n\n\n\n\n\nVariable\nValue\n\n\n\n\nModel Version\nv9.0 - 2023-02-28\n\n\nUser Name\nChris Day\n\n\nUser Company\nWasatch Front Regional Council"
+  },
+  {
+    "objectID": "index.html#general-variables-for-this-run",
+    "href": "index.html#general-variables-for-this-run",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "General Variables for This Run",
+    "text": "General Variables for This Run\n\n\n\n\n\nVariable\nValue\n\n\n\n\nRun ID\nv9_SE19_Net19\n\n\nPath to Model Scenario\nScenarios\\quarto-preview\\BY_2019\\\n\n\nPath to Python Executable\nC:\\Python27\\ArcGIS10.6\\python.exe\n\n\nRun Update TAZID\n1\n\n\nRun Update Walk Buffer\n1"
+  },
+  {
+    "objectID": "index.html#taz-variables",
+    "href": "index.html#taz-variables",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "TAZ Variables",
+    "text": "TAZ Variables\n\n\n\n\n\nVariable\nValue\n\n\n\n\nTAZ Area File\nTAZ.dbf\n\n\nLarge District Field\nDISTLRG\n\n\nMedium District Field\nDISTMED\n\n\nSmall District Field\nDISTSML\n\n\nEco-Ed Transit pass Field\nECOEDPASS\n\n\nFree Fare Transit Field\nFREEFARE"
+  },
+  {
+    "objectID": "index.html#demographic-variables",
+    "href": "index.html#demographic-variables",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "Demographic Variables",
+    "text": "Demographic Variables\n\n\n\n\n\nVariable\nValue\n\n\n\n\nDemographic Year\n2019\n\n\nBox Elder SE File\n1_BoxElder\\SE_Box Elder_2019.csv\n\n\nWFRC SE File\n2_WFRC\\FiscallyConstrained\\SE_2019.csv\n\n\nMAG SE File\n3_MAG\\FiscallyConstrained\\SE_2019.csv"
+  },
+  {
+    "objectID": "index.html#highway-network-variables",
+    "href": "index.html#highway-network-variables",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "Highway Network Variables",
+    "text": "Highway Network Variables\n\n\n\n\n\n\n\n\n\n\nVariable\nField Type\nValue\n\n\n\n\nNetwork Year\nNetwork\n2019\n\n\nScenario Network\nNetwork\nv9_SE19_Net19\n\n\nMaster Network File\nNetwork\nMasterNet_v9 - 2023-03-02\n\n\nDefault Link Projection File\nNetwork\nGIS\\_Default_Projection.prj\n\n\nHOT Zone Update Polygon File\nNetwork\nGIS\\Tollz_shp.shp\n\n\nPark & Ride Field\nNode\nPNR_2019\n\n\nCRT Fare Zone Field\nNode\nFARZN_2019\n\n\nAdded Node Fields\nNode\n;\n\n\nLane Field\nLink\nLN_2019\n\n\nFT Field\nLink\nFT_2019\n\n\nHOV Field\nLink\nHOT_2019\n\n\nSpeed Factor Field\nLink\nSFAC_Base\n\n\nCapacity Factor Field\nLink\nCFAC_Base\n\n\nTransit Speed Field\nLink\nTSPD_2019\n\n\nReliability Laner Field\nLink\nREL_2019\n\n\nMin HOT Toll\nLink\n25\n\n\nMax HOT Toll\nLink\n200\n\n\nAdded Link Fields\nLink\n;"
+  },
+  {
+    "objectID": "index.html#transit-network-variables",
+    "href": "index.html#transit-network-variables",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "Transit Network Variables",
+    "text": "Transit Network Variables\n\n\n\n\n\nVariable\nValue\n\n\n\n\nTransit Files Dir\nLin_2019\\"
+  },
+  {
+    "objectID": "index.html#external-trip-variables",
+    "href": "index.html#external-trip-variables",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "External Trip Variables",
+    "text": "External Trip Variables\n\n\n\n\n\nVariable\nValue\n\n\n\n\nExternal Volume Count\nExt_Vol_Control\\external_year_vol.csv\n\n\nExternal Trip End Pattern\n2019\\WF_DY_PA_ExtTripEnds.csv\n\n\nExternal Trip Table\n2019\\WF_DY_PA_VehicleTrips.mtx"
+  },
+  {
+    "objectID": "index.html#speed-capacity",
+    "href": "index.html#speed-capacity",
+    "title": "Wasatch Front Travel Demand Model Results",
+    "section": "Speed & Capacity",
+    "text": "Speed & Capacity\n\n\n\n\n\nVariable\nValue\n\n\n\n\nSpd-Cap Lookup File\nLookup_Speed_Capacity.csv"
   }
 ]

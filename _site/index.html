@@ -118,8 +118,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#control-center" id="toc-control-center" class="nav-link active" data-scroll-target="#control-center">Control Center</a></li>
-  <li><a href="#general-parameters" id="toc-general-parameters" class="nav-link" data-scroll-target="#general-parameters">General Parameters</a></li>
+  <li><a href="#general-identification" id="toc-general-identification" class="nav-link active" data-scroll-target="#general-identification">General Identification</a></li>
+  <li><a href="#general-variables-for-this-run" id="toc-general-variables-for-this-run" class="nav-link" data-scroll-target="#general-variables-for-this-run">General Variables for This Run</a></li>
+  <li><a href="#taz-variables" id="toc-taz-variables" class="nav-link" data-scroll-target="#taz-variables">TAZ Variables</a></li>
+  <li><a href="#demographic-variables" id="toc-demographic-variables" class="nav-link" data-scroll-target="#demographic-variables">Demographic Variables</a></li>
+  <li><a href="#highway-network-variables" id="toc-highway-network-variables" class="nav-link" data-scroll-target="#highway-network-variables">Highway Network Variables</a></li>
+  <li><a href="#transit-network-variables" id="toc-transit-network-variables" class="nav-link" data-scroll-target="#transit-network-variables">Transit Network Variables</a></li>
+  <li><a href="#external-trip-variables" id="toc-external-trip-variables" class="nav-link" data-scroll-target="#external-trip-variables">External Trip Variables</a></li>
+  <li><a href="#speed-capacity" id="toc-speed-capacity" class="nav-link" data-scroll-target="#speed-capacity">Speed &amp; Capacity</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -156,8 +162,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>This website displays the major results from the travel demand model steps.</p>
-<section id="control-center" class="level2">
-<h2 class="anchored" data-anchor-id="control-center">Control Center</h2>
+<section id="general-identification" class="level2">
+<h2 class="anchored" data-anchor-id="general-identification">General Identification</h2>
 <div class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
@@ -169,36 +175,24 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Description</td>
-<td style="text-align: left;">‘BY_2019 run on Computer of Chris’</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Model Version</td>
-<td style="text-align: left;">‘v9.0 - 2023-02-28’</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Run ID</td>
-<td style="text-align: left;">‘v9_SE19_Net19’</td>
+<td style="text-align: left;">v9.0 - 2023-02-28</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Parent Directory</td>
-<td style="text-align: left;">‘D:\GitHub\WF-TDM-v9.0\’</td>
+<td style="text-align: left;">User Name</td>
+<td style="text-align: left;">Chris Day</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Scenario Directory</td>
-<td style="text-align: left;">‘Scenarios\quarto-preview\BY_2019\’</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Master Prefix</td>
-<td style="text-align: left;">‘MasterNet_v9 - 2023-03-02’</td>
+<td style="text-align: left;">User Company</td>
+<td style="text-align: left;">Wasatch Front Regional Council</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="general-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="general-parameters">General Parameters</h2>
+<section id="general-variables-for-this-run" class="level2">
+<h2 class="anchored" data-anchor-id="general-variables-for-this-run">General Variables for This Run</h2>
 <div class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
@@ -210,16 +204,282 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Used Zones</td>
-<td style="text-align: left;">3629</td>
+<td style="text-align: left;">Run ID</td>
+<td style="text-align: left;">v9_SE19_Net19</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Highway Nodes</td>
-<td style="text-align: left;">‘10000-99999’</td>
+<td style="text-align: left;">Path to Model Scenario</td>
+<td style="text-align: left;">Scenarios\quarto-preview\BY_2019\</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">MC Calibration</td>
-<td style="text-align: left;">0</td>
+<td style="text-align: left;">Path to Python Executable</td>
+<td style="text-align: left;">C:\Python27\ArcGIS10.6\python.exe</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Run Update TAZID</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Run Update Walk Buffer</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="taz-variables" class="level2">
+<h2 class="anchored" data-anchor-id="taz-variables">TAZ Variables</h2>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TAZ Area File</td>
+<td style="text-align: left;">TAZ.dbf</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Large District Field</td>
+<td style="text-align: left;">DISTLRG</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Medium District Field</td>
+<td style="text-align: left;">DISTMED</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Small District Field</td>
+<td style="text-align: left;">DISTSML</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Eco-Ed Transit pass Field</td>
+<td style="text-align: left;">ECOEDPASS</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Free Fare Transit Field</td>
+<td style="text-align: left;">FREEFARE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="demographic-variables" class="level2">
+<h2 class="anchored" data-anchor-id="demographic-variables">Demographic Variables</h2>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Demographic Year</td>
+<td style="text-align: left;">2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Box Elder SE File</td>
+<td style="text-align: left;">1_BoxElder\SE_Box Elder_2019.csv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WFRC SE File</td>
+<td style="text-align: left;">2_WFRC\FiscallyConstrained\SE_2019.csv</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MAG SE File</td>
+<td style="text-align: left;">3_MAG\FiscallyConstrained\SE_2019.csv</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="highway-network-variables" class="level2">
+<h2 class="anchored" data-anchor-id="highway-network-variables">Highway Network Variables</h2>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 18%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Field Type</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Network Year</td>
+<td style="text-align: left;">Network</td>
+<td style="text-align: left;">2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Scenario Network</td>
+<td style="text-align: left;">Network</td>
+<td style="text-align: left;">v9_SE19_Net19</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Master Network File</td>
+<td style="text-align: left;">Network</td>
+<td style="text-align: left;">MasterNet_v9 - 2023-03-02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Default Link Projection File</td>
+<td style="text-align: left;">Network</td>
+<td style="text-align: left;">GIS\_Default_Projection.prj</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HOT Zone Update Polygon File</td>
+<td style="text-align: left;">Network</td>
+<td style="text-align: left;">GIS\Tollz_shp.shp</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Park &amp; Ride Field</td>
+<td style="text-align: left;">Node</td>
+<td style="text-align: left;">PNR_2019</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CRT Fare Zone Field</td>
+<td style="text-align: left;">Node</td>
+<td style="text-align: left;">FARZN_2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Added Node Fields</td>
+<td style="text-align: left;">Node</td>
+<td style="text-align: left;">;</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lane Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">LN_2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FT Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">FT_2019</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HOV Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">HOT_2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Speed Factor Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">SFAC_Base</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Capacity Factor Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">CFAC_Base</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transit Speed Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">TSPD_2019</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Reliability Laner Field</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">REL_2019</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Min HOT Toll</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Max HOT Toll</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">200</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Added Link Fields</td>
+<td style="text-align: left;">Link</td>
+<td style="text-align: left;">;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="transit-network-variables" class="level2">
+<h2 class="anchored" data-anchor-id="transit-network-variables">Transit Network Variables</h2>
+<div class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Transit Files Dir</td>
+<td style="text-align: left;">Lin_2019\</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="external-trip-variables" class="level2">
+<h2 class="anchored" data-anchor-id="external-trip-variables">External Trip Variables</h2>
+<div class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">External Volume Count</td>
+<td style="text-align: left;">Ext_Vol_Control\external_year_vol.csv</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">External Trip End Pattern</td>
+<td style="text-align: left;">2019\WF_DY_PA_ExtTripEnds.csv</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">External Trip Table</td>
+<td style="text-align: left;">2019\WF_DY_PA_VehicleTrips.mtx</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="speed-capacity" class="level2">
+<h2 class="anchored" data-anchor-id="speed-capacity">Speed &amp; Capacity</h2>
+<div class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Spd-Cap Lookup File</td>
+<td style="text-align: left;">Lookup_Speed_Capacity.csv</td>
 </tr>
 </tbody>
 </table>

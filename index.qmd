@@ -14,31 +14,115 @@ from IPython.display import display
 
 This website displays the major results from the travel demand model steps.
 
-## Control Center
+## General Identification
 ```{python}
 #| echo: false
 df = pd.DataFrame(
-    [('Description'        , globalpaths.Description ),
-     ('Model Version'      , globalpaths.ModelVersion),
-     ('Run ID'             , globalpaths.RID         ),
-     ('Parent Directory'   , globalpaths.ParentDir   ),
-     ('Scenario Directory' , globalpaths.ScenarioDir ),
-     ('Master Prefix'      , globalpaths.MasterPrefix)],
+    [('Model Version', globalpaths.ModelVersion),
+     ('User Name'    , globalpaths.UserName    ),
+     ('User Company' , globalpaths.UserCompany )],
 columns = ['Variable', 'Value']).reset_index(drop=True)
-
 markdown_df = df.to_markdown(index=False)
 display(Markdown(markdown_df))
 ```
 
-## General Parameters
+## General Variables for This Run
 ```{python}
 #| echo: false
 df = pd.DataFrame(
-    [('Used Zones'    , globalpaths.UsedZones),
-     ('Highway Nodes' , globalpaths.HwyNodes ),
-     ('MC Calibration', globalpaths.calib    )],
+    [('Run ID'                   , globalpaths.RID            ),
+     ('Path to Model Scenario'   , globalpaths.ScenarioDir    ),
+     ('Path to Python Executable', globalpaths.PythonPath     ),
+     ('Run Update TAZID'         , globalpaths.Run_UpdateTAZID),
+     ('Run Update Walk Buffer'   , globalpaths.Run_WalkBuffer )],
 columns = ['Variable', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
 
+## TAZ Variables
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('TAZ Area File'            , globalpaths.TAZ_DBF       ),
+     ('Large District Field'     , globalpaths.DISTLRG       ),
+     ('Medium District Field'    , globalpaths.DISTMED       ),
+     ('Small District Field'     , globalpaths.DISTSML       ),
+     ('Eco-Ed Transit pass Field', globalpaths.EcoEdPassZones),
+     ('Free Fare Transit Field'  , globalpaths.FreeFareZones )],
+columns = ['Variable', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
+
+## Demographic Variables
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('Demographic Year' , globalpaths.DemographicYear),
+     ('Box Elder SE File', globalpaths.BE_SEFile      ),
+     ('WFRC SE File'     , globalpaths.WFRC_SEFile    ),
+     ('MAG SE File'      , globalpaths.MAG_SEFile     )],
+columns = ['Variable', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
+
+## Highway Network Variables
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('Network Year'                 , 'Network', globalpaths.NetworkYear      ),
+     ('Scenario Network'             , 'Network', globalpaths.UnloadedNetPrefix),
+     ('Master Network File'          , 'Network', globalpaths.MasterPrefix     ),
+     ('Default Link Projection File' , 'Network', globalpaths.DefaultProjFile  ),
+     ('HOT Zone Update Polygon File' , 'Network', globalpaths.tollz_shp        ),
+     ('Park & Ride Field'            , 'Node'   , globalpaths.pnr_field        ),
+     ('CRT Fare Zone Field'          , 'Node'   , globalpaths.CRT_Fare_Zone    ),
+     ('Added Node Fields'            , 'Node'   , globalpaths.AddNodeFields    ),
+     ('Lane Field'                   , 'Link'   , globalpaths.LNfield          ),
+     ('FT Field'                     , 'Link'   , globalpaths.FTfield          ),
+     ('HOV Field'                    , 'Link'   , globalpaths.HOVmarker        ),
+     ('Speed Factor Field'           , 'Link'   , globalpaths.SpdFactor        ),
+     ('Capacity Factor Field'        , 'Link'   , globalpaths.CapFactor        ),
+     ('Transit Speed Field'          , 'Link'   , globalpaths.TranSpeedField   ),
+     ('Reliability Laner Field'      , 'Link'   , globalpaths.Rel_LN           ),
+     ('Min HOT Toll'                 , 'Link'   , globalpaths.HOT_Toll_Min     ),
+     ('Max HOT Toll'                 , 'Link'   , globalpaths.HOT_Toll_Max     ),
+     ('Added Link Fields'            , 'Link'   , globalpaths.AddLinkFields    ),],
+columns = ['Variable', 'Field Type', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
+
+## Transit Network Variables
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('Transit Files Dir' , globalpaths.Mlin)],
+columns = ['Variable', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
+
+## External Trip Variables
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('External Volume Count'    , globalpaths.Ext_Vol_Count     ),
+     ('External Trip End Pattern', globalpaths.Ext_TripEndPattern),
+     ('External Trip Table'      , globalpaths.Ext_TripTable     )],
+columns = ['Variable', 'Value']).reset_index(drop=True)
+markdown_df = df.to_markdown(index=False)
+display(Markdown(markdown_df))
+```
+
+## Speed & Capacity
+```{python}
+#| echo: false
+df = pd.DataFrame(
+    [('Spd-Cap Lookup File' , globalpaths.SpeedCapLookupFile)],
+columns = ['Variable', 'Value']).reset_index(drop=True)
 markdown_df = df.to_markdown(index=False)
 display(Markdown(markdown_df))
 ```
