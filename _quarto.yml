@@ -10,10 +10,12 @@ website:
   favicon: _pictures/favicon.ico
   page-footer:
     right: "Built using [Quarto](https://quarto.org)"
-    left: "Results Report for Travel Demand Model Run"
+    left: |
+      [![](https://wfrc.org/wp-content/uploads/2021/11/logo.jpg){fig-alt='WFRC' width=150px}](https://wfrc.org) 
+      [![](https://mountainland.org/static/media/logo/svg/MAG_Logo_Horz_NoTag.svg){fig-alt='MAG' width=65px}](https://mountainland.org/)
   navbar:
     background: info
-    logo: _pictures/WFRCDieCutLogo.png
+    logo: _pictures/wf-logo-new-white-t.png
     tools:
       - icon: github
         href: https://github.com/WFRCAnalytics/TDM-Documentation
