@@ -4,74 +4,26 @@ author: Wasatch Front Regional Council
 date-modified: last-modified
 ---
 
+```{python}
+#| echo: false
+import globalpaths
+import pandas as pd
+from IPython.display import display, Markdown
+from IPython.display import display
+```
+
 This website displays the major results from the travel demand model steps.
 
 ## Control Center
-
 ```{python}
 #| echo: false
-from IPython.display import display, Markdown
-def get_substrings(filename, target_string):
-    substrings = []
-    with open(filename, 'r') as file:
-        for line in file:
-            if target_string in line:
-                index_eq = line.find('=')
-                index_sc = line.find(';')
-                if index_sc != -1 and index_sc > index_eq:
-                    # Semicolon exists after equal sign, extract substring between them
-                    substring = line[index_eq+1:index_sc].strip()
-                else:
-                    # No semicolon after equal sign, extract substring after equal sign
-                    substring = line[index_eq+1:].strip()
-                # Escape backslash characters with an extra backslash
-                substring = substring.replace('\\', '\\\\')
-                substrings.append(substring)
-    return substrings
-```
-
-```{python}
-#| echo: false
-controlcenter = r'../../1ControlCenter.block'
-ModelVersion = get_substrings(controlcenter, r'ModelVersion')[0]
-RID          = get_substrings(controlcenter, r'RID')[0]
-ParentDir    = get_substrings(controlcenter, r'ParentDir')[0]
-ScenarioDir  = get_substrings(controlcenter, r'ScenarioDir')[0]
-Description  = get_substrings(controlcenter, r'Description')[0]
-MasterPrefix = get_substrings(controlcenter, r'MasterPrefix')[0]
-```
-
-```{python}
-#| echo: false
-#display(Markdown(
-#    """**Description** = {Description}
-#    \n**ModelVersion** = {ModelVersion}
-#    \n**RID** = {RID}
-#    \n**ParentDir** = {ParentDir}
-#    \n**ScenarioDir** = {ScenarioDir}
-#    \n**MasterPrefix** = {MasterPrefix}
-#    """
-#    .format(ModelVersion = ModelVersion,
-#            RID = RID,
-#            ParentDir = ParentDir,
-#            ScenarioDir = ScenarioDir,
-#            Description = Description,
-#            MasterPrefix = MasterPrefix)))#
-#
-```
-
-```{python}
-#| echo: false
-import pandas as pd
-from IPython.display import display
-
 df = pd.DataFrame(
-    [('Description'        , Description ),
-     ('Model Version'      , ModelVersion),
-     ('Run ID'             , RID         ),
-     ('Parent Directory'   , ParentDir   ),
-     ('Scenario Directory' , ScenarioDir ),
-     ('Master Prefix'      , MasterPrefix)],
+    [('Description'        , globalpaths.Description ),
+     ('Model Version'      , globalpaths.ModelVersion),
+     ('Run ID'             , globalpaths.RID         ),
+     ('Parent Directory'   , globalpaths.ParentDir   ),
+     ('Scenario Directory' , globalpaths.ScenarioDir ),
+     ('Master Prefix'      , globalpaths.MasterPrefix)],
 columns = ['Variable', 'Value']).reset_index(drop=True)
 
 markdown_df = df.to_markdown(index=False)
@@ -81,21 +33,10 @@ display(Markdown(markdown_df))
 ## General Parameters
 ```{python}
 #| echo: false
-genparams = r'../../0GeneralParameters.block'
-UsedZones = get_substrings(genparams, r'UsedZones')[0]
-HwyNodes  = get_substrings(genparams, r'HwyNodes')[0]
-calib     = get_substrings(genparams, r'calib')[2]
-```
-
-```{python}
-#| echo: false
-import pandas as pd
-from IPython.display import display
-
 df = pd.DataFrame(
-    [('Used Zones'    , UsedZones),
-     ('Highway Nodes' , HwyNodes ),
-     ('MC Calibration', calib    )],
+    [('Used Zones'    , globalpaths.UsedZones),
+     ('Highway Nodes' , globalpaths.HwyNodes ),
+     ('MC Calibration', globalpaths.calib    )],
 columns = ['Variable', 'Value']).reset_index(drop=True)
 
 markdown_df = df.to_markdown(index=False)
