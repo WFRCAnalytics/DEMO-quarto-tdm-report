@@ -1,0 +1,35 @@
+# Demographic Summary
+
+```{python}
+#| echo: false
+from IPython.display import display, Markdown
+def get_substrings(filename, target_string):
+    substrings = []
+    with open(filename, 'r') as file:
+        for line in file:
+            if target_string in line:
+                index_eq = line.find('=')
+                index_sc = line.find(';')
+                if index_sc != -1 and index_sc > index_eq:
+                    # Semicolon exists after equal sign, extract substring between them
+                    substring = line[index_eq+1:index_sc].strip()
+                else:
+                    # No semicolon after equal sign, extract substring after equal sign
+                    substring = line[index_eq+1:].strip()
+                # Escape backslash characters with an extra backslash
+                substring = substring.replace('\\', '\\\\')
+                substrings.append(substring)
+    return substrings
+def clean(string):
+    return string.replace("'", "")
+RID = get_substrings(r'../../../1ControlCenter.block', r'RID')[0]
+```
+
+```{python}
+from dbfread import DBF
+import pandas as pd
+se_file = pd.DataFrame(DBF('../../../0_InputProcessing/SE_File_' + clean(RID) + '.dbf',load=True))
+ctot_file = ''
+#display(se_file.head(5))
+```
+

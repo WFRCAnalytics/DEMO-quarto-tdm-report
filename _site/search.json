@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "2_TripGen/index.html",
+    "href": "2_TripGen/index.html",
+    "title": "Trip Generation",
+    "section": "",
+    "text": "Preface"
+  },
+  {
+    "objectID": "3_Distribute/index.html",
+    "href": "3_Distribute/index.html",
+    "title": "Distribution",
+    "section": "",
+    "text": "Preface"
+  },
+  {
+    "objectID": "4_ModeChoice/index.html",
+    "href": "4_ModeChoice/index.html",
+    "title": "Mode Choice",
+    "section": "",
+    "text": "Preface"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Travel Demand Model Results Report",
+    "section": "",
+    "text": "This website displays the major results from the travel demand model steps."
+  },
+  {
+    "objectID": "index.html#general-parameters",
+    "href": "index.html#general-parameters",
+    "title": "Travel Demand Model Results Report",
+    "section": "General Parameters",
+    "text": "General Parameters\n\n\n\n\n\nVariable\nValue\n\n\n\n\nUsed Zones\n3629\n\n\nHighway Nodes\n‘10000-99999’\n\n\nMC Calibration\n0"
+  },
+  {
+    "objectID": "index.html#control-center-variables",
+    "href": "index.html#control-center-variables",
+    "title": "Travel Demand Model Results Report",
+    "section": "Control Center Variables",
+    "text": "Control Center Variables\n\n\n\n\n\nVariable\nValue\n\n\n\n\nDescription\n‘BY_2019 run on Computer of Chris’\n\n\nModelVersion\n‘v9.0 - 2023-02-28’\n\n\nRID\n‘v9_SE19_Net19’\n\n\nParentDir\n‘D:\\GitHub\\WF-TDM-v9.0\\’\n\n\nScenarioDir\n‘Scenarios\\quarto-preview\\BY_2019\\’\n\n\nMasterPrefix\n‘MasterNet_v9 - 2023-03-02’"
+  },
+  {
+    "objectID": "index.html#control-center",
+    "href": "index.html#control-center",
+    "title": "Travel Demand Model Results Report",
+    "section": "Control Center",
+    "text": "Control Center\n\n\n\n\n\nVariable\nValue\n\n\n\n\nDescription\n‘BY_2019 run on Computer of Chris’\n\n\nModel Version\n‘v9.0 - 2023-02-28’\n\n\nRun ID\n‘v9_SE19_Net19’\n\n\nParent Directory\n‘D:\\GitHub\\WF-TDM-v9.0\\’\n\n\nScenario Directory\n‘Scenarios\\quarto-preview\\BY_2019\\’\n\n\nMaster Prefix\n‘MasterNet_v9 - 2023-03-02’"
+  },
+  {
+    "objectID": "0_InputProcessing/demo.html",
+    "href": "0_InputProcessing/demo.html",
+    "title": "Demographic Summary",
+    "section": "",
+    "text": "Code\nfrom dbfread import DBF\nimport pandas as pd\nse_file = pd.DataFrame(DBF('../../../0_InputProcessing/SE_File_' + clean(RID) + '.dbf',load=True))\nctot_file = ''\n#display(se_file.head(5))"
+  },
+  {
+    "objectID": "0_InputProcessing/index.html",
+    "href": "0_InputProcessing/index.html",
+    "title": "Input Processing",
+    "section": "",
+    "text": "Preface"
+  }
+]

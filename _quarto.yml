@@ -1,0 +1,75 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    browser: true
+
+website:
+  title: "TDM Results Report"
+  favicon: _pictures/favicon.ico
+  page-footer:
+    right: "Built using [Quarto](https://quarto.org)"
+    left: "Results Report for Travel Demand Model Run"
+  navbar:
+    background: info
+    logo: _pictures/WFRCDieCutLogo.png
+    tools:
+      - icon: github
+        href: https://github.com/WFRCAnalytics/TDM-Documentation
+    title: false
+    collapse-below: lg
+    left:
+      - text: "Overview"
+        href: index.qmd
+        id: overview
+      - text: "Input Processing"
+        href: 0_InputProcessing/index.qmd
+        id: 0-input-pro
+      - text: "Trip Generation"
+        href: 2_TripGen/index.qmd
+        id: 2-trip-gen
+      - text: "Distribution"
+        href: 3_Distribute/index.qmd
+        id: 3-distrib
+      - text: "Mode Choice"
+        href: 4_ModeChoice/index.qmd
+        id: 4-mc
+          
+  sidebar:
+    - id: 0-input-pro
+      title: "Input Processing"
+      contents:
+        - text: "Preface"
+          href: 0_InputProcessing/index.qmd
+        - text: "Demographic Summary"
+          href: 0_InputProcessing/demo.qmd
+    - id: 2-trip-gen
+      title: "Trip Generation"
+      contents:
+        - text: "Preface"
+          href: 2_TripGen/index.qmd
+    - id: 3-distrib
+      title: "Distribution"
+      contents:
+        - text: "Preface"
+          href: 3_Distribute/index.qmd
+    - id: 4-mc
+      title: "Mode Choice"
+      contents:
+        - text: "Preface"
+          href: 4_ModeChoice/index.qmd
+
+format:
+  html:
+    toc: true
+    theme:
+      - cerulean
+      - custom.css
+    code-fold: true
+  pdf:
+    documentclass: scrreprt
+
+
+
+
