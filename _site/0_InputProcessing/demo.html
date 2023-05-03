@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>TDM Results Report – demo</title>
+<title>TDM Results Report - Demographic Summary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -93,9 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -179,8 +142,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="demo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#box-elder" id="toc-box-elder" class="nav-link active" data-scroll-target="#box-elder">Box Elder</a></li>
+  <li><a href="#weber" id="toc-weber" class="nav-link" data-scroll-target="#weber">Weber</a></li>
+  <li><a href="#davis" id="toc-davis" class="nav-link" data-scroll-target="#davis">Davis</a></li>
+  <li><a href="#salt-lake" id="toc-salt-lake" class="nav-link" data-scroll-target="#salt-lake">Salt Lake</a></li>
+  <li><a href="#utah" id="toc-utah" class="nav-link" data-scroll-target="#utah">Utah</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="demo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -201,177 +174,836 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-execution_count="1">
+<section id="box-elder" class="level2">
+<h2 class="anchored" data-anchor-id="box-elder">Box Elder</h2>
+
 <details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">'..'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> globalpaths</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>se_file <span class="op">=</span> globalpaths.df_se_file</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ctot_file <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>display(se_file.head(<span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<summary>Expand Table</summary>
+<div class="cell" data-execution_count="224">
 <div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Z</th>
-<th data-quarto-table-cell-role="th">CO_TAZID</th>
-<th data-quarto-table-cell-role="th">SUBAREAID</th>
-<th data-quarto-table-cell-role="th">TOTHH</th>
-<th data-quarto-table-cell-role="th">HHPOP</th>
-<th data-quarto-table-cell-role="th">HHSIZE</th>
-<th data-quarto-table-cell-role="th">TOTEMP</th>
-<th data-quarto-table-cell-role="th">RETEMP</th>
-<th data-quarto-table-cell-role="th">INDEMP</th>
-<th data-quarto-table-cell-role="th">OTHEMP</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">ENROL_HIGH</th>
-<th data-quarto-table-cell-role="th">CO_FIPS</th>
-<th data-quarto-table-cell-role="th">CO_NAME</th>
-<th data-quarto-table-cell-role="th">CITY_NAME</th>
-<th data-quarto-table-cell-role="th">DISTLRG</th>
-<th data-quarto-table-cell-role="th">DLRG_NAME</th>
-<th data-quarto-table-cell-role="th">DISTMED</th>
-<th data-quarto-table-cell-role="th">DMED_NAME</th>
-<th data-quarto-table-cell-role="th">DISTSML</th>
-<th data-quarto-table-cell-role="th">DSML_NAME</th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">ControlTotal</th>
+<th style="text-align: right;">Model</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;">%Diff</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>30001</td>
-<td>1</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.00</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>...</td>
-<td>0</td>
-<td>3</td>
-<td>BOX ELDER</td>
-<td>Box Elder County North</td>
-<td>1</td>
-<td>Box Elder - WFRC</td>
-<td>1</td>
-<td>North of Brigham City</td>
-<td>1</td>
-<td>1.1: Brigham City North</td>
+<td style="text-align: left;">TOTHH</td>
+<td style="text-align: right;">18369</td>
+<td style="text-align: right;">10130</td>
+<td style="text-align: right;">-8238</td>
+<td style="text-align: right;">-45</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>30002</td>
-<td>1</td>
-<td>11.6</td>
-<td>64.0</td>
-<td>5.52</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>...</td>
-<td>0</td>
-<td>3</td>
-<td>BOX ELDER</td>
-<td>Box Elder County North</td>
-<td>1</td>
-<td>Box Elder - WFRC</td>
-<td>1</td>
-<td>North of Brigham City</td>
-<td>1</td>
-<td>1.1: Brigham City North</td>
+<td style="text-align: left;">HHPOP</td>
+<td style="text-align: right;">56542</td>
+<td style="text-align: right;">30296</td>
+<td style="text-align: right;">-26246</td>
+<td style="text-align: right;">-46</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>30003</td>
-<td>1</td>
-<td>12.5</td>
-<td>53.2</td>
-<td>4.26</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>...</td>
-<td>0</td>
-<td>3</td>
-<td>BOX ELDER</td>
-<td>Box Elder County North</td>
-<td>1</td>
-<td>Box Elder - WFRC</td>
-<td>1</td>
-<td>North of Brigham City</td>
-<td>1</td>
-<td>1.1: Brigham City North</td>
+<td style="text-align: left;">HH_Size</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-3</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>30004</td>
-<td>1</td>
-<td>2.9</td>
-<td>9.8</td>
-<td>3.38</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>...</td>
-<td>0</td>
-<td>3</td>
-<td>BOX ELDER</td>
-<td>Box Elder County North</td>
-<td>1</td>
-<td>Box Elder - WFRC</td>
-<td>1</td>
-<td>North of Brigham City</td>
-<td>1</td>
-<td>1.1: Brigham City North</td>
+<td style="text-align: left;">ALLEMP</td>
+<td style="text-align: right;">30480</td>
+<td style="text-align: right;">16973</td>
+<td style="text-align: right;">-13507</td>
+<td style="text-align: right;">-44</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>30005</td>
-<td>1</td>
-<td>50.1</td>
-<td>153.6</td>
-<td>3.07</td>
-<td>2.3</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>2.3</td>
-<td>...</td>
-<td>0</td>
-<td>3</td>
-<td>BOX ELDER</td>
-<td>Box Elder County North</td>
-<td>1</td>
-<td>Box Elder - WFRC</td>
-<td>1</td>
-<td>North of Brigham City</td>
-<td>1</td>
-<td>1.1: Brigham City North</td>
+<td style="text-align: left;">RETL</td>
+<td style="text-align: right;">2756</td>
+<td style="text-align: right;">1754</td>
+<td style="text-align: right;">-1002</td>
+<td style="text-align: right;">-36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FOOD</td>
+<td style="text-align: right;">1663</td>
+<td style="text-align: right;">1111</td>
+<td style="text-align: right;">-552</td>
+<td style="text-align: right;">-33</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MANU</td>
+<td style="text-align: right;">6460</td>
+<td style="text-align: right;">2522</td>
+<td style="text-align: right;">-3938</td>
+<td style="text-align: right;">-61</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSLE</td>
+<td style="text-align: right;">2724</td>
+<td style="text-align: right;">715</td>
+<td style="text-align: right;">-2009</td>
+<td style="text-align: right;">-74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OFFI</td>
+<td style="text-align: right;">993</td>
+<td style="text-align: right;">712</td>
+<td style="text-align: right;">-280</td>
+<td style="text-align: right;">-28</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GVED</td>
+<td style="text-align: right;">3399</td>
+<td style="text-align: right;">2312</td>
+<td style="text-align: right;">-1087</td>
+<td style="text-align: right;">-32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HLTH</td>
+<td style="text-align: right;">2022</td>
+<td style="text-align: right;">1434</td>
+<td style="text-align: right;">-588</td>
+<td style="text-align: right;">-29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTHR</td>
+<td style="text-align: right;">5655</td>
+<td style="text-align: right;">4234</td>
+<td style="text-align: right;">-1420</td>
+<td style="text-align: right;">-25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGRI</td>
+<td style="text-align: right;">1539</td>
+<td style="text-align: right;">390</td>
+<td style="text-align: right;">-1149</td>
+<td style="text-align: right;">-75</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MING</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">-50</td>
+<td style="text-align: right;">-75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONS</td>
+<td style="text-align: right;">2261</td>
+<td style="text-align: right;">1254</td>
+<td style="text-align: right;">-1007</td>
+<td style="text-align: right;">-45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBJ</td>
+<td style="text-align: right;">941</td>
+<td style="text-align: right;">518</td>
+<td style="text-align: right;">-423</td>
+<td style="text-align: right;">-45</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Job_HH</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_ELEM</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">2703</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ENROL_MIDL</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1093</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_HIGH</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">1661</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
 </tr>
 </tbody>
 </table>
-
-<p>5 rows × 36 columns</p>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Variable        category
+ControlTotal     float64
+Model            float64
+Diff             float64
+%Diff            float64
+dtype: object</code></pre>
 </div>
 </div>
+</details>
+</section>
+<section id="weber" class="level2">
+<h2 class="anchored" data-anchor-id="weber">Weber</h2>
+
+<details>
+<summary>Expand Table</summary>
+<div class="cell" data-execution_count="225">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">ControlTotal</th>
+<th style="text-align: right;">Model</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;">%Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TOTHH</td>
+<td style="text-align: right;">86141</td>
+<td style="text-align: right;">86141</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HHPOP</td>
+<td style="text-align: right;">249841</td>
+<td style="text-align: right;">249842</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HH_Size</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLEMP</td>
+<td style="text-align: right;">142482</td>
+<td style="text-align: right;">142482</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RETL</td>
+<td style="text-align: right;">15279</td>
+<td style="text-align: right;">15279</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FOOD</td>
+<td style="text-align: right;">8250</td>
+<td style="text-align: right;">8250</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MANU</td>
+<td style="text-align: right;">15224</td>
+<td style="text-align: right;">15224</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSLE</td>
+<td style="text-align: right;">8189</td>
+<td style="text-align: right;">8189</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OFFI</td>
+<td style="text-align: right;">9083</td>
+<td style="text-align: right;">9083</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GVED</td>
+<td style="text-align: right;">23865</td>
+<td style="text-align: right;">23865</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HLTH</td>
+<td style="text-align: right;">14497</td>
+<td style="text-align: right;">14497</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTHR</td>
+<td style="text-align: right;">34562</td>
+<td style="text-align: right;">34562</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGRI</td>
+<td style="text-align: right;">1482</td>
+<td style="text-align: right;">1481</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MING</td>
+<td style="text-align: right;">143</td>
+<td style="text-align: right;">143</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONS</td>
+<td style="text-align: right;">8672</td>
+<td style="text-align: right;">8672</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBJ</td>
+<td style="text-align: right;">3236</td>
+<td style="text-align: right;">3233</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Job_HH</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_ELEM</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">26958</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ENROL_MIDL</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">11524</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_HIGH</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">11230</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+</details>
+</section>
+<section id="davis" class="level2">
+<h2 class="anchored" data-anchor-id="davis">Davis</h2>
+
+<details>
+<summary>Expand Table</summary>
+<div class="cell" data-execution_count="226">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">ControlTotal</th>
+<th style="text-align: right;">Model</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;">%Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TOTHH</td>
+<td style="text-align: right;">110496</td>
+<td style="text-align: right;">110496</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HHPOP</td>
+<td style="text-align: right;">356443</td>
+<td style="text-align: right;">356442</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HH_Size</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLEMP</td>
+<td style="text-align: right;">197873</td>
+<td style="text-align: right;">197853</td>
+<td style="text-align: right;">-20</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RETL</td>
+<td style="text-align: right;">20064</td>
+<td style="text-align: right;">20064</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FOOD</td>
+<td style="text-align: right;">10863</td>
+<td style="text-align: right;">10863</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MANU</td>
+<td style="text-align: right;">14769</td>
+<td style="text-align: right;">14769</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSLE</td>
+<td style="text-align: right;">10730</td>
+<td style="text-align: right;">10730</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OFFI</td>
+<td style="text-align: right;">18991</td>
+<td style="text-align: right;">18991</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GVED</td>
+<td style="text-align: right;">40714</td>
+<td style="text-align: right;">40719</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HLTH</td>
+<td style="text-align: right;">15859</td>
+<td style="text-align: right;">15859</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTHR</td>
+<td style="text-align: right;">46724</td>
+<td style="text-align: right;">46724</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGRI</td>
+<td style="text-align: right;">957</td>
+<td style="text-align: right;">956</td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MING</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONS</td>
+<td style="text-align: right;">13618</td>
+<td style="text-align: right;">13618</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBJ</td>
+<td style="text-align: right;">4434</td>
+<td style="text-align: right;">4431</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Job_HH</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_ELEM</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">41660</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ENROL_MIDL</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">18712</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_HIGH</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">17226</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section id="salt-lake" class="level2">
+<h2 class="anchored" data-anchor-id="salt-lake">Salt Lake</h2>
+
+<details>
+<summary>Expand Table</summary>
+<div class="cell" data-execution_count="227">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">ControlTotal</th>
+<th style="text-align: right;">Model</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;">%Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TOTHH</td>
+<td style="text-align: right;">399636</td>
+<td style="text-align: right;">399634</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HHPOP</td>
+<td style="text-align: right;">1.15899e+06</td>
+<td style="text-align: right;">1.15898e+06</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HH_Size</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLEMP</td>
+<td style="text-align: right;">950865</td>
+<td style="text-align: right;">949309</td>
+<td style="text-align: right;">-1556</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RETL</td>
+<td style="text-align: right;">85849</td>
+<td style="text-align: right;">85852</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FOOD</td>
+<td style="text-align: right;">56206</td>
+<td style="text-align: right;">56208</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MANU</td>
+<td style="text-align: right;">59851</td>
+<td style="text-align: right;">59852</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSLE</td>
+<td style="text-align: right;">84870</td>
+<td style="text-align: right;">84870</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OFFI</td>
+<td style="text-align: right;">118808</td>
+<td style="text-align: right;">118810</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GVED</td>
+<td style="text-align: right;">140842</td>
+<td style="text-align: right;">140844</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HLTH</td>
+<td style="text-align: right;">73790</td>
+<td style="text-align: right;">73791</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTHR</td>
+<td style="text-align: right;">248020</td>
+<td style="text-align: right;">248021</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGRI</td>
+<td style="text-align: right;">1211</td>
+<td style="text-align: right;">1209</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MING</td>
+<td style="text-align: right;">3526</td>
+<td style="text-align: right;">3526</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONS</td>
+<td style="text-align: right;">52061</td>
+<td style="text-align: right;">52058</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBJ</td>
+<td style="text-align: right;">25831</td>
+<td style="text-align: right;">25823</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Job_HH</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_ELEM</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">106386</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ENROL_MIDL</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">44618</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_HIGH</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">55514</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
+</section>
+<section id="utah" class="level2">
+<h2 class="anchored" data-anchor-id="utah">Utah</h2>
+
+<details>
+<summary>Expand Table</summary>
+<div class="cell" data-execution_count="228">
+<div class="cell-output cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: right;">ControlTotal</th>
+<th style="text-align: right;">Model</th>
+<th style="text-align: right;">Diff</th>
+<th style="text-align: right;">%Diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">TOTHH</td>
+<td style="text-align: right;">178928</td>
+<td style="text-align: right;">178923</td>
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HHPOP</td>
+<td style="text-align: right;">628931</td>
+<td style="text-align: right;">628926</td>
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HH_Size</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ALLEMP</td>
+<td style="text-align: right;">377067</td>
+<td style="text-align: right;">376875</td>
+<td style="text-align: right;">-192</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RETL</td>
+<td style="text-align: right;">43048</td>
+<td style="text-align: right;">42976</td>
+<td style="text-align: right;">-72</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">FOOD</td>
+<td style="text-align: right;">20840</td>
+<td style="text-align: right;">20837</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MANU</td>
+<td style="text-align: right;">21610</td>
+<td style="text-align: right;">21610</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WSLE</td>
+<td style="text-align: right;">15416</td>
+<td style="text-align: right;">15352</td>
+<td style="text-align: right;">-64</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OFFI</td>
+<td style="text-align: right;">54354</td>
+<td style="text-align: right;">54355</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">GVED</td>
+<td style="text-align: right;">58393</td>
+<td style="text-align: right;">58387</td>
+<td style="text-align: right;">-6</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">HLTH</td>
+<td style="text-align: right;">32868</td>
+<td style="text-align: right;">32868</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OTHR</td>
+<td style="text-align: right;">85420</td>
+<td style="text-align: right;">85402</td>
+<td style="text-align: right;">-18</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AGRI</td>
+<td style="text-align: right;">3462</td>
+<td style="text-align: right;">3440</td>
+<td style="text-align: right;">-22</td>
+<td style="text-align: right;">-1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MING</td>
+<td style="text-align: right;">667</td>
+<td style="text-align: right;">667</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">CONS</td>
+<td style="text-align: right;">30203</td>
+<td style="text-align: right;">30206</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HBJ</td>
+<td style="text-align: right;">10786</td>
+<td style="text-align: right;">10778</td>
+<td style="text-align: right;">-8</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Job_HH</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">-0</td>
+<td style="text-align: right;">-0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_ELEM</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">79682</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ENROL_MIDL</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">32449</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ENROL_HIGH</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">34727</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

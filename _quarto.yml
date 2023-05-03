@@ -45,7 +45,7 @@ website:
         - text: "Preface"
           href: 0_InputProcessing/index.qmd
         - text: "Demographic Summary"
-          href: 0_InputProcessing/demo.qmd
+          href: 0_InputProcessing/demo.ipynb
     - id: 2-trip-gen
       title: "Trip Generation"
       contents:

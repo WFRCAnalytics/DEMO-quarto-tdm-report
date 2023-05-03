@@ -71,7 +71,7 @@ Mlin              = clean(get_substrings(controlcenter, r'Mlin')[0])
 Ext_Vol_Count     = clean(get_substrings(controlcenter, r'Ext_Vol_Count')[0])
 Ext_TripEndPattern= clean(get_substrings(controlcenter, r'Ext_TripEndPattern')[0])
 Ext_TripTable     = clean(get_substrings(controlcenter, r'Ext_TripTable')[0])
-ScenarioDir   = clean(get_substrings(controlcenter, r'ScenarioDir')[0])
+ScenarioDir       = clean(get_substrings(controlcenter, r'ScenarioDir')[0])
 SpeedCapLookupFile= clean(get_substrings(controlcenter, r'SpeedCapLookupFile')[0])
 
 
@@ -85,5 +85,9 @@ calib     = clean(get_substrings(genparams, r'calib')[2])
 
 
 # se
-se_file = r'../../0_InputProcessing/SE_File_' + RID + '.dbf'
-df_se_file = pd.DataFrame(DBF(os.path.abspath(os.path.join(os.path.dirname(__file__), se_file)),load=True))
+se_file         = r'../../0_InputProcessing/SE_File_' + RID + '.dbf'
+control_se_file = r'../../../../1_Inputs/2_SEData/_ControlTotals/ControlTotal_SE_AllCounties.csv'
+#
+#
+df_se_file                     = pd.DataFrame(DBF(os.path.abspath(os.path.join(os.path.dirname(__file__), se_file)),load=True))
+df_ControlTotal_SE_AllCounties = pd.read_csv(os.path.abspath(os.path.join(os.path.dirname(__file__), control_se_file))) 
