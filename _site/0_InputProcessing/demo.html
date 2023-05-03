@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -59,6 +93,9 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -151,6 +188,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#davis" id="toc-davis" class="nav-link" data-scroll-target="#davis">Davis</a></li>
   <li><a href="#salt-lake" id="toc-salt-lake" class="nav-link" data-scroll-target="#salt-lake">Salt Lake</a></li>
   <li><a href="#utah" id="toc-utah" class="nav-link" data-scroll-target="#utah">Utah</a></li>
+  <li><a href="#checking-se-file-for-inconsistencies" id="toc-checking-se-file-for-inconsistencies" class="nav-link" data-scroll-target="#checking-se-file-for-inconsistencies">Checking SE File for inconsistencies:</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="demo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
@@ -174,12 +212,33 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<div class="cell" data-execution_count="382">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_job_sectors(co_name, <span class="bu">long</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    sectors <span class="op">=</span> [<span class="st">'RETL'</span>,<span class="st">'FOOD'</span>,<span class="st">'MANU'</span>,<span class="st">'WSLE'</span>,<span class="st">'OFFI'</span>,<span class="st">'GVED'</span>,<span class="st">'HLTH'</span>,<span class="st">'OTHR'</span>,<span class="st">'AGRI'</span>,<span class="st">'MING'</span>,<span class="st">'CONS'</span>,<span class="st">'HBJ'</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    bar_sectors <span class="op">=</span> <span class="bu">long</span>.loc[<span class="bu">long</span>[<span class="st">'CO_NAME'</span>] <span class="op">==</span> co_name]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    bar_sectors <span class="op">=</span> bar_sectors.loc[bar_sectors[<span class="st">'Variable'</span>].isin(sectors)]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> px.data.tips()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> px.histogram(bar_sectors, x<span class="op">=</span><span class="st">"Variable"</span>, y<span class="op">=</span><span class="st">"Value"</span>, text_auto<span class="op">=</span><span class="st">'.2s'</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                 color<span class="op">=</span><span class="st">'Type'</span>, barmode<span class="op">=</span><span class="st">'group'</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                 height<span class="op">=</span><span class="dv">400</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    fig.update_layout(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        xaxis_title<span class="op">=</span><span class="st">"Job Type"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        yaxis_title<span class="op">=</span><span class="st">"Number of Jobs"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        legend_title<span class="op">=</span><span class="st">"Data Type"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#fig.update_xaxes(tickangle=90)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <section id="box-elder" class="level2">
 <h2 class="anchored" data-anchor-id="box-elder">Box Elder</h2>
 
 <details>
 <summary>Expand Table</summary>
-<div class="cell" data-execution_count="224">
+<div class="cell" data-execution_count="383">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -335,23 +394,23 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </div>
-<div class="cell-output cell-output-display">
-<pre><code>Variable        category
-ControlTotal     float64
-Model            float64
-Diff             float64
-%Diff            float64
-dtype: object</code></pre>
-</div>
 </div>
 </details>
+<div class="cell" data-execution_count="384">
+<div id="fig-be-sector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe scrolling="no" width="100%" height="420" src="iframe_figures/figure_384.html" frameborder="0" allowfullscreen=""></iframe>
+<figcaption class="figure-caption">Figure&nbsp;1: Box Elder Control Total vs.&nbsp;Modeled Number of Jobs by Job Type</figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="weber" class="level2">
 <h2 class="anchored" data-anchor-id="weber">Weber</h2>
 
 <details>
 <summary>Expand Table</summary>
-<div class="cell" data-execution_count="225">
+<div class="cell" data-execution_count="385">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -509,13 +568,21 @@ dtype: object</code></pre>
 </div>
 </div>
 </details>
+<div class="cell" data-execution_count="386">
+<div id="fig-we-sector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe scrolling="no" width="100%" height="420" src="iframe_figures/figure_386.html" frameborder="0" allowfullscreen=""></iframe>
+<figcaption class="figure-caption">Figure&nbsp;2: Weber Control Total vs.&nbsp;Modeled Number of Jobs by Job Type</figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="davis" class="level2">
 <h2 class="anchored" data-anchor-id="davis">Davis</h2>
 
 <details>
 <summary>Expand Table</summary>
-<div class="cell" data-execution_count="226">
+<div class="cell" data-execution_count="387">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -673,13 +740,21 @@ dtype: object</code></pre>
 </div>
 </div>
 </details>
+<div class="cell" data-execution_count="388">
+<div id="fig-da-sector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe scrolling="no" width="100%" height="420" src="iframe_figures/figure_388.html" frameborder="0" allowfullscreen=""></iframe>
+<figcaption class="figure-caption">Figure&nbsp;3: Davis Control Total vs.&nbsp;Modeled Number of Jobs by Job Type</figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="salt-lake" class="level2">
 <h2 class="anchored" data-anchor-id="salt-lake">Salt Lake</h2>
 
 <details>
 <summary>Expand Table</summary>
-<div class="cell" data-execution_count="227">
+<div class="cell" data-execution_count="389">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -837,13 +912,21 @@ dtype: object</code></pre>
 </div>
 </div>
 </details>
+<div class="cell" data-execution_count="390">
+<div id="fig-sl-sector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe scrolling="no" width="100%" height="420" src="iframe_figures/figure_390.html" frameborder="0" allowfullscreen=""></iframe>
+<figcaption class="figure-caption">Figure&nbsp;4: Salt Lake Control Total vs.&nbsp;Modeled Number of Jobs by Job Type</figcaption>
+</figure>
+</div>
+</div>
 </section>
 <section id="utah" class="level2">
 <h2 class="anchored" data-anchor-id="utah">Utah</h2>
 
 <details>
 <summary>Expand Table</summary>
-<div class="cell" data-execution_count="228">
+<div class="cell" data-execution_count="391">
 <div class="cell-output cell-output-display">
 <table class="table table-sm table-striped small">
 <thead>
@@ -1001,6 +1084,23 @@ dtype: object</code></pre>
 </div>
 </div>
 </details>
+<div class="cell" data-execution_count="394">
+<div id="fig-ut-sector" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<iframe scrolling="no" width="100%" height="420" src="iframe_figures/figure_394.html" frameborder="0" allowfullscreen=""></iframe>
+<figcaption class="figure-caption">Figure&nbsp;5: Utah Control Total vs.&nbsp;Modeled Number of Jobs by Job Type</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="checking-se-file-for-inconsistencies" class="level2">
+<h2 class="anchored" data-anchor-id="checking-se-file-for-inconsistencies">Checking SE File for inconsistencies:</h2>
+<p>Below are the TAZIDs where the Sum of Employment Categories are not within 0.5 of the ALLEMP value:</p>
+<div class="cell" data-execution_count="393">
+<div class="cell-output cell-output-display">
+<pre><code>[582, 583, 598, 677, 683, 684, 689, 740, 775, 794, 924]</code></pre>
+</div>
+</div>
 
 
 </section>
