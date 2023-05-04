@@ -83,6 +83,7 @@ genparams = os.path.abspath(os.path.join(os.path.dirname(__file__), genparams))
 UsedZones = clean(get_substrings(genparams, r'UsedZones')[0])
 HwyNodes  = clean(get_substrings(genparams, r'HwyNodes')[0])
 calib     = clean(get_substrings(genparams, r'calib')[2])
+calib2    = 'hello'
 
 
 # se
@@ -93,7 +94,6 @@ df_se_file                     = pd.DataFrame(DBF(os.path.abspath(os.path.join(o
 df_ControlTotal_SE_AllCounties = pd.read_csv(os.path.abspath(os.path.join(os.path.dirname(__file__), control_se_file))) 
 
 # taz
-tickle = 'ticklemeelmo'
-taz_file        = 'test'
-taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file)))
+taz_file = 'test'
+#taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file)))
 
