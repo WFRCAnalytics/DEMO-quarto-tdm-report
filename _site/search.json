@@ -157,7 +157,7 @@
     "objectID": "0_InputProcessing/demo.html#checking-se-file-for-inconsistencies",
     "href": "0_InputProcessing/demo.html#checking-se-file-for-inconsistencies",
     "title": "Demographic Summary",
-    "section": "Checking SE File for inconsistencies:",
-    "text": "Checking SE File for inconsistencies:\nBelow are the TAZIDs where the Sum of Employment Categories are not within 0.5 of the ALLEMP value:\n\n\n[582, 583, 598, 677, 683, 684, 689, 740, 775, 794, 924]"
+    "section": "Checking SE File for Inconsistencies",
+    "text": "Checking SE File for Inconsistencies\nBelow are the TAZIDs where the Sum of Employment Categories are not within 0.5 of the ALLEMP value:\n\n\n[582, 583, 598, 677, 683, 684, 689, 740, 775, 794, 924]\n\n\n\n\nCode\ntaz = globalpaths.taz_file\n\n\nAttributeError: module 'globalpaths' has no attribute 'taz_file'\n\n\n\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook"
   }
 ]

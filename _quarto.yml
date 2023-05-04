@@ -46,6 +46,8 @@ website:
           href: 0_InputProcessing/index.qmd
         - text: "Demographic Summary"
           href: 0_InputProcessing/demo.ipynb
+        - text: "Network Processing"
+          href: 0_InputProcessing/network-process.ipynb
     - id: 2-trip-gen
       title: "Trip Generation"
       contents:

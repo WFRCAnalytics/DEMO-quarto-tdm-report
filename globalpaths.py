@@ -3,6 +3,7 @@ from IPython.display import display, Markdown
 from dbfread import DBF
 import pandas as pd
 import os
+import geopandas as gpd
 
 
 # functions
@@ -87,7 +88,12 @@ calib     = clean(get_substrings(genparams, r'calib')[2])
 # se
 se_file         = r'../../0_InputProcessing/SE_File_' + RID + '.dbf'
 control_se_file = r'../../../../1_Inputs/2_SEData/_ControlTotals/ControlTotal_SE_AllCounties.csv'
-#
-#
+
 df_se_file                     = pd.DataFrame(DBF(os.path.abspath(os.path.join(os.path.dirname(__file__), se_file)),load=True))
 df_ControlTotal_SE_AllCounties = pd.read_csv(os.path.abspath(os.path.join(os.path.dirname(__file__), control_se_file))) 
+
+# taz
+tickle = 'ticklemeelmo'
+taz_file        = 'test'
+taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file)))
+
