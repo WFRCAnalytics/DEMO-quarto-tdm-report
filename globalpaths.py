@@ -94,6 +94,7 @@ df_se_file                     = pd.DataFrame(DBF(os.path.abspath(os.path.join(o
 df_ControlTotal_SE_AllCounties = pd.read_csv(os.path.abspath(os.path.join(os.path.dirname(__file__), control_se_file))) 
 
 # taz
-taz_file = 'test'
-#taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file)))
+taz_file = r'../../../../1_Inputs/1_TAZ/TAZ.shp'
+taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file))) 
+
 
