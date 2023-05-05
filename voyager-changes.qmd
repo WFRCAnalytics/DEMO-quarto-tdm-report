@@ -1,0 +1,13 @@
+---
+title:  "Wasatch Front Travel Demand Model Results"
+author: Wasatch Front Regional Council
+date-modified: last-modified
+---
+
+### MTX to OMX Conversions
+
+1. "2_ModelScripts\\0_InputProcessing\\c_NetworkProcessing\\2_FFSkim.s"
+    - In order to report the unconnected TAZs, we need to convert the skm_FF.mtx file to an omx file. This can be done by adding the following code after 'Network Processing 2: free flow skims'
+        - ::: {.callout-note collapse="true"}
+          convertmat from = '@ParentDir@@ScenarioDir@0_InputProcessing\\skm_FF.mtx' to = '@ParentDir@@ScenarioDir@0_InputProcessing\\skm_FF.omx' compression = 1 format = omx
+          :::

@@ -4,7 +4,7 @@ from dbfread import DBF
 import pandas as pd
 import os
 import geopandas as gpd
-
+import openmatrix as omx
 
 # functions
 def clean(string):
@@ -97,4 +97,7 @@ df_ControlTotal_SE_AllCounties = pd.read_csv(os.path.abspath(os.path.join(os.pat
 taz_file = r'../../../../1_Inputs/1_TAZ/TAZ.shp'
 taz_shp = gpd.read_file(os.path.abspath(os.path.join(os.path.dirname(__file__), taz_file))) 
 
-
+# skm_ff
+skmFF_file_name = r'../../../0_InputProcessing/skm_FF.omx'
+skmFF_file = omx.open_file(skmFF_file_name)
+skmFF_time = pd.DataFrame(skmFF_file['time'])
